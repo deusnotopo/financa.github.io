@@ -810,7 +810,7 @@
                 savingsTable.appendChild(row);
             });
             
-            document.getElementById('total-savings').textContent = total.toFixed(2);
+            document.getElementById('total-savings').textContent = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             
             const percentage = Math.min(100, (total / targetSavings) * 100);
             document.getElementById('total-savings-bar').style.width = `${percentage}%`;
@@ -818,11 +818,11 @@
             
             // Calculate annual impact
             const annual = total * 12;
-            document.getElementById('annual-impact').textContent = annual.toFixed(2);
+            document.getElementById('annual-impact').textContent = annual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             
             // Calculate 5-year impact at 8% annual return
             const fiveYear = annual * (((Math.pow(1.08, 5) - 1) / 0.08));
-            document.getElementById('five-year-impact').textContent = fiveYear.toFixed(2);
+            document.getElementById('five-year-impact').textContent = fiveYear.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         }
 
         // Remove savings item
